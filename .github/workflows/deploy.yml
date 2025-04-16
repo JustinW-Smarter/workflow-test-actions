@@ -12,5 +12,5 @@ jobs:
     steps:
       - name: 🔐 Deploy via Webhook
         run: |
-          curl -X POST https://git.smarter.nl/webhook-actions/deploy.php \
+          curl -X POST https://git.smarter.nl/webhook-actions/webhooks/deploy.php \
             -H "X-Smarter-Secret: ${{ secrets.WEBHOOK_SECRET }}"
