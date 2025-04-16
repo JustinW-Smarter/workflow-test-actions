@@ -14,4 +14,6 @@ jobs:
       - name: 🔐 Deploy via Webhook
         run: |
           curl -v -X POST https://git.smarter.nl/webhook-actions/webhooks/deploy.php \
-            -H "X_SMARTER_SECRET: ${{ secrets.WEBHOOK_SECRET }}"  # Debugging toevoegen
+            -H "Content-Type: application/json" \
+            -H "X-Smarter-Secret: ${{ secrets.WEBHOOK_SECRET }}" \
+            -d '{"ref": "refs/heads/main"}'
