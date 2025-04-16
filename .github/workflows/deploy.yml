@@ -14,4 +14,4 @@ jobs:
       - name: 🔐 Deploy via Webhook
         run: |
           curl -v -X POST https://git.smarter.nl/webhook-actions/webhooks/deploy.php \
-            -H "X-Smarter-Secret: ${{ secrets.WEBHOOK_SECRET }}"  # Debugging toevoegen
+            -H "X-Smarter-Secret: 'Smarter_webhook_$ecret_PR0D"  # Debugging toevoegen
