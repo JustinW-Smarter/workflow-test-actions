@@ -8,6 +8,7 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    environment: Productie
 
     steps:
       - name: 🔐 Deploy via Webhook
