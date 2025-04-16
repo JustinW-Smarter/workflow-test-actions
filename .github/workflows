@@ -1,0 +1,16 @@
+name: 🚀 FTP Deploy naar productie mbv Webhooks en Github Actions
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 🔐 Deploy via Webhook
+        run: |
+          curl -X POST https://git.smarter.nl/webhook-ftp/deploy.php \
+            -H "X-Smarter-Secret: ${{ secrets.WEBHOOK_SECRET }}"
