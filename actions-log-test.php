@@ -51,7 +51,7 @@ try {
     throw new Exception("💥 Exception binnen try-catch");
 } catch (Exception $e) {
     echo "🛑 Gevangen exception: " . $e->getMessage() . "\n";
-    exit('fatal error');
+    nonExistentFunction();
 }
 onbestaandeFunctie();
 
