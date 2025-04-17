@@ -26,7 +26,7 @@ jobs:
           RESPONSE=$(curl -s -X POST https://git.smarter.nl/webhook-actions/webhooks/deploy.php \
             -H "X-Smarter-Secret: ${{ secrets.WEBHOOK_SECRET }}")
           echo "---- BEGIN OUTPUT ----"
-          echo "RESPONSE"
+          echo "$RESPONSE"
           echo "---- END OUTPUT ----"
 
       - name: 📥 Download server log (deploy.log)
