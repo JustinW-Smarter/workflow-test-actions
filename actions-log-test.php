@@ -1,4 +1,6 @@
 <?php
+// Let op: de eerste onopgevangen fatal error of exception beëindigt het script
+// ✅ Ja, die() werkt hetzelfde als exit() — beide stoppen het script met optionele boodschap
 //    while (ob_get_level()) ob_end_clean();
 //    ob_implicit_flush(true);
 
@@ -44,6 +46,12 @@ echo $array['onbestaand'];
 
 // ❌ Fatal error (call undefined function)
 echo "📍 " . __FILE__ . ':' . __LINE__ . " — fatal error: call undefined function\n";
+echo "📍 " . __FILE__ . ':' . __LINE__ . " — try-catch exception test\n";
+try {
+    throw new Exception("💥 Exception binnen try-catch");
+} catch (Exception $e) {
+    echo "🛑 Gevangen exception: " . $e->getMessage() . "\n";
+}
 onbestaandeFunctie();
 
 // ❌ Uncaught Exception
