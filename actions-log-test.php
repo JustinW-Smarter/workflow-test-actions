@@ -1,6 +1,6 @@
 <?php
-    while (ob_get_level()) ob_end_clean();
-    ob_implicit_flush(true);
+//    while (ob_get_level()) ob_end_clean();
+//    ob_implicit_flush(true);
 
     ini_set('display_errors', 1);
     ini_set('display_startup_errors', 1);
@@ -24,6 +24,4 @@
     // Output via var_dump
     echo "📍 " . __FILE__ . ':' . __LINE__ . " — var_dump demo\n";
     echo "=== 🔍 var_dump output ===\n";
-    echo '<pre>';
     var_dump($demo);
-    echo '</pre>';
