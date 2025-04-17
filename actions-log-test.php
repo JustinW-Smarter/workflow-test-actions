@@ -14,7 +14,7 @@
         'deployed_at' => date('Y-m-d H:i:s')
     ];
 
-    echo "📍 " . __FILE__ . ':' . __LINE__ . " — test echo";
+    echo "📍 " . __FILE__ . ':' . __LINE__ . " — test echo\n";
 
     // Output via print_r
     echo "📍 " . __FILE__ . ':' . __LINE__ . " — print_r demo\n";
@@ -24,4 +24,6 @@
     // Output via var_dump
     echo "📍 " . __FILE__ . ':' . __LINE__ . " — var_dump demo\n";
     echo "=== 🔍 var_dump output ===\n";
+    echo '<pre>';
     var_dump($demo);
+    echo '</pre>';
