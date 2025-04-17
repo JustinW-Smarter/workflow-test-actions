@@ -25,3 +25,5 @@
     echo "📍 " . __FILE__ . ':' . __LINE__ . " — var_dump demo\n";
     echo "=== 🔍 var_dump output ===\n";
     var_dump($demo);
+    echo "📍 " . __FILE__ . ':' . __LINE__ . " — undefined variable test\n";
+    echo $niet_bestaand;
