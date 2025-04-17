@@ -17,7 +17,6 @@ jobs:
           curl -s -X POST https://git.smarter.nl/webhook-actions/webhooks/deploy.php \
             -H "Content-Type: application/json" \
             -H "X-Smarter-Secret: ${{ secrets.WEBHOOK_SECRET }}" \
-            -H "Accept: text/plain" \
             -d '{"ref": "refs/heads/main"}'
           echo "✅ Webhook gestart"
 

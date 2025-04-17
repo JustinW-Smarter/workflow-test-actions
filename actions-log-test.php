@@ -14,12 +14,14 @@
         'deployed_at' => date('Y-m-d H:i:s')
     ];
 
-    echo "test echo\n";exit();
+    echo "📍 " . __FILE__ . ':' . __LINE__ . " — test echo\n";
 
     // Output via print_r
+    echo "📍 " . __FILE__ . ':' . __LINE__ . " — print_r demo\n";
     echo "=== 📦 print_r output ===\n";
     print_r($demo);
 
     // Output via var_dump
+    echo "📍 " . __FILE__ . ':' . __LINE__ . " — var_dump demo\n";
     echo "=== 🔍 var_dump output ===\n";
     var_dump($demo);
