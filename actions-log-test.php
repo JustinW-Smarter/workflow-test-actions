@@ -29,7 +29,7 @@
     echo "=== 🔍 var_dump output ===\n";
     var_dump($demo);
     echo "📍 " . __FILE__ . ':' . __LINE__ . " — undefined variable test\n";
-    echo $niet_bestaand;
+//    echo $niet_bestaand;
 
 // ⚠️ Warning (include failure)
 echo "📍 " . __FILE__ . ':' . __LINE__ . " — warning: include fail\n";
@@ -51,11 +51,11 @@ try {
     throw new Exception("💥 Exception binnen try-catch");
 } catch (Exception $e) {
     echo "🛑 Gevangen exception: " . $e->getMessage() . "\n";
-    nonExistentFunction();
+    // nonExistentFunction();
 }
-onbestaandeFunctie();
+// onbestaandeFunctie();
 
 // ❌ Uncaught Exception
-echo "📍 " . __FILE__ . ':' . __LINE__ . " — uncaught exception\n";
-throw new Exception("💥 Dit is een ongecaught exception");
+// echo "📍 " . __FILE__ . ':' . __LINE__ . " — uncaught exception\n";
+// throw new Exception("💥 Dit is een ongecaught exception");
 ?>
