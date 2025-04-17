@@ -13,7 +13,22 @@ jobs:
     steps:
       - name: 🔐 Deploy via Webhook
         run: |
-          curl -v -X POST https://git.smarter.nl/webhook-actions/webhooks/deploy.php \
+          echo "⏳ Start webhook call..."
+          curl -s -X POST https://git.smarter.nl/webhook-actions/webhooks/deploy.php \
             -H "Content-Type: application/json" \
             -H "X-Smarter-Secret: ${{ secrets.WEBHOOK_SECRET }}" \
             -d '{"ref": "refs/heads/main"}'
+          echo "✅ Webhook gestart"
+
+      - name: 📥 Download server log (deploy.log)
+        run: |
+          echo "⏬ Downloaden van deploy.log..."
+          curl -s https://git.smarter.nl/webhook-actions/webhooks/deploy.log -o deploy.log
+          echo "✅ Logbestand gedownload. Inhoud:"
+          cat deploy.log
+
+      - name: 📦 Upload log als artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: deploy-log
+          path: deploy.log
