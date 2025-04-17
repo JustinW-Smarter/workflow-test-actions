@@ -14,7 +14,7 @@
         'deployed_at' => date('Y-m-d H:i:s')
     ];
 
-    echo "📍 " . __FILE__ . ':' . __LINE__ . " — test echo\n";
+    echo "📍 " . __FILE__ . ':' . __LINE__ . " — test echo";
 
     // Output via print_r
     echo "📍 " . __FILE__ . ':' . __LINE__ . " — print_r demo\n";
