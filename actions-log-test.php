@@ -43,7 +43,7 @@ $array = [];
 // echo $array['onbestaand'];
 
 // ❌ Fatal error (call undefined function)
-echo "📍 " . __FILE__ . ':' . __LINE__ . " — fatal error: call undefined function\n";
+// echo "📍 " . __FILE__ . ':' . __LINE__ . " — fatal error: call undefined function\n";
 echo "📍 " . __FILE__ . ':' . __LINE__ . " — try-catch exception test\n";
 try {
     throw new Exception("💥 Exception binnen try-catch");
