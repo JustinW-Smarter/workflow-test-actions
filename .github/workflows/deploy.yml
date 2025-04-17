@@ -28,6 +28,20 @@ jobs:
           echo "$RESPONSE" 
           echo "---- END OUTPUT ----"
 
+      - name: 📤 Check webhook response op error
+        run: |
+          set -e
+          RESPONSE=$(curl -s -X POST https://git.smarter.nl/webhook-actions/actions-log-test.php \
+            -H "X-Smarter-Secret: ${{ secrets.WEBHOOK_SECRET }}")
+
+          echo "$RESPONSE"
+
+          # Stop de workflow als er een fatal error of uncaught exception in voorkomt
+          if echo "$RESPONSE" | grep -Ei "(Fatal error|Uncaught exception|syntax error)"; then
+            echo "❌ Foutmelding gedetecteerd in webhook response"
+            exit 1
+          fi
+
       - name: 📥 Download server log (deploy.log)
         run: |
           echo "⏬ Downloaden van deploy.log..."

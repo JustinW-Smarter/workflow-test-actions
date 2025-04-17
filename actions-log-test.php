@@ -51,10 +51,11 @@ try {
     throw new Exception("💥 Exception binnen try-catch");
 } catch (Exception $e) {
     echo "🛑 Gevangen exception: " . $e->getMessage() . "\n";
-    exit(1);
+    exit('fatal error');
 }
 onbestaandeFunctie();
 
 // ❌ Uncaught Exception
 echo "📍 " . __FILE__ . ':' . __LINE__ . " — uncaught exception\n";
 throw new Exception("💥 Dit is een ongecaught exception");
+?>
