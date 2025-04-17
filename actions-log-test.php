@@ -11,7 +11,7 @@
         'deployed_at' => date('Y-m-d H:i:s')
     ];
 
-    echo "test echo\n";
+    echo "test echo\n";exit();
 
     // Output via print_r
     echo "=== 📦 print_r output ===\n";
