@@ -28,3 +28,24 @@
     var_dump($demo);
     echo "📍 " . __FILE__ . ':' . __LINE__ . " — undefined variable test\n";
     echo $niet_bestaand;
+
+// ⚠️ Warning (include failure)
+echo "📍 " . __FILE__ . ':' . __LINE__ . " — warning: include fail\n";
+include 'niet-bestaand-bestand.php';
+
+// ⚠️ Custom warning via trigger_error
+echo "📍 " . __FILE__ . ':' . __LINE__ . " — trigger_error: warning\n";
+trigger_error("⚠️ Custom warning triggered", E_USER_WARNING);
+
+// ⚠️ Notice
+echo "📍 " . __FILE__ . ':' . __LINE__ . " — notice: accessing undefined array key\n";
+$array = [];
+echo $array['onbestaand'];
+
+// ❌ Fatal error (call undefined function)
+echo "📍 " . __FILE__ . ':' . __LINE__ . " — fatal error: call undefined function\n";
+onbestaandeFunctie();
+
+// ❌ Uncaught Exception
+echo "📍 " . __FILE__ . ':' . __LINE__ . " — uncaught exception\n";
+throw new Exception("💥 Dit is een ongecaught exception");
